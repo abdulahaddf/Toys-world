@@ -47,33 +47,37 @@ const Nav = () => {
             className={({ isActive }) =>
               isActive ? "text-slate-900" : "text-slate-600 link link-hover"
             }
-            to="/blog"
+            to="/all"
           >
             {" "}
             All toys
           </NavLink>
         </div>
         <div>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "text-slate-900" : "text-slate-600 link link-hover"
-            }
-            to="/blog"
-          >
-            {" "}
-            My toys
-          </NavLink>
+         {
+          user ?  <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-slate-900" : "text-slate-600 link link-hover"
+          }
+          to="/my"
+        >
+          {" "}
+          My toys
+        </NavLink> : ""
+         }
         </div>
         <div>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "text-slate-900" : "text-slate-600 link link-hover"
-            }
-            to="/blog"
-          >
-            {" "}
+        {
+          user ?  <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-slate-900" : "text-slate-600 link link-hover"
+          }
+          to="/add"
+        >
+          {" "}
           Add a toy
-          </NavLink>
+        </NavLink> : ""
+         }
         </div>
       </div>
 
