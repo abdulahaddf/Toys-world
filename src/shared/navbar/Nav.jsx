@@ -160,13 +160,9 @@ const Nav = () => {
             >
               Log Out
             </button>
-            <div className="relative w-10 rounded-full">
+            <div className="relative w-10 rounded-full tooltip tooltip-left " data-tip={user?.displayName}>
               <img className="rounded-full" src={user?.photoURL} />
-              <div className="absolute top-0 hover:top-8 right-0 hover:right-12 opacity-0 hover:opacity-100">
-                <p className="text-slate-700 text-md font-medium w-24">
-                  {user?.displayName}
-                </p>
-              </div>
+              
             </div>
           </div>
         ) : (
