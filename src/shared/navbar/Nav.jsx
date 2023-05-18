@@ -10,17 +10,15 @@ const Nav = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="flex bg-slate-100 md:h-20 items-center p-3 text-center ">
-      <div className="flex-none">
-        <Link
-          to="/"
-          className="text-slate-600 hover:text-slate-700  font-extrabold normal-case text-xl md:text-4xl"
-        >
-          Toys World
-        </Link>
-      </div>
+    <div className="  items-center text-center ">
 
-      <div className="flex font-bold text-xl grow justify-center space-x-7 ">
+      <div className="navbar bg-base-100">
+  <div className="navbar-start">
+    <div className="dropdown">
+      <label tabIndex={0} className="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </label>
+      <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
         <div>
           <NavLink
             className={({ isActive }) =>
@@ -79,9 +77,81 @@ const Nav = () => {
         </NavLink> : ""
          }
         </div>
+      </ul>
+    </div>
+    <div className="flex-none">
+        <Link
+          to="/"
+          className="text-slate-600 hover:text-slate-700  font-extrabold normal-case text-xl md:text-4xl"
+        >
+          Toys World
+        </Link>
       </div>
-
-      <div className="md:flex-none">
+  </div>
+  <div className="navbar-center hidden lg:flex">
+    <ul className="menu menu-horizontal px-1 font-bold text-xl space-x-6">
+    <div>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-slate-900" : "text-slate-600 link link-hover"
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-slate-900" : "text-slate-600 link link-hover"
+            }
+            to="/blog"
+          >
+            {" "}
+            Blog
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-slate-900" : "text-slate-600 link link-hover"
+            }
+            to="/all"
+          >
+            {" "}
+            All toys
+          </NavLink>
+        </div>
+        <div>
+         {
+          user ?  <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-slate-900" : "text-slate-600 link link-hover"
+          }
+          to="/my"
+        >
+          {" "}
+          My toys
+        </NavLink> : ""
+         }
+        </div>
+        <div>
+        {
+          user ?  <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-slate-900" : "text-slate-600 link link-hover"
+          }
+          to="/add"
+        >
+          {" "}
+          Add a toy
+        </NavLink> : ""
+         }
+        </div>
+    </ul>
+  </div>
+  <div className="navbar-end">
+  <div className="md:flex-none">
         {user ? (
           <div className="flex items-center">
             <button
@@ -105,7 +175,17 @@ const Nav = () => {
           </Link>
         )}
       </div>
+  </div>
+</div>
     </div>
+
+
+
+
+
+
+
+
   );
 };
 
