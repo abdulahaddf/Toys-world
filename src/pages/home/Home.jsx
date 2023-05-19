@@ -14,11 +14,11 @@ const Home = () => {
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage: `url("https://i.ibb.co/7jXXpKy/59950734942.png")`,
+          backgroundImage: `url("https://i.ibb.co/LNnjFs7/allHero.jpg")`,
         }}
       >
         <div className="hero-overlay bg-black bg-opacity-70"></div>
-        <div className="hero-content text-center text-neutral-content">
+        <div className="hero-content w-1/2 text-neutral-content">
           <div data-aos="fade-up" data-aos-duration="3100" className="max-w-md">
             <h1 className="mb-5 text-5xl font-extrabold">
               Welcome to the World of Action Toys

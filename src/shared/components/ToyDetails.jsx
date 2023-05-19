@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+
 import { useLoaderData } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 
 const ToyDetails = ({ params }) => {
-  const [toy, setToy] = useState([]);
+ 
   const data = useLoaderData();
   console.log(data);
   const {
@@ -39,6 +40,9 @@ const ToyDetails = ({ params }) => {
           </div>
         </div>
       </div>
+      <Marquee>
+  I can be a React component, multiple React components, or just some text.
+</Marquee>
     </div>
   );
 };
