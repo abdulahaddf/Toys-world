@@ -8,6 +8,8 @@ import MyTOys from "../pages/toys/MyTOys";
 import AllToys from "../pages/toys/AllToys";
 import Addtoy from "../pages/toys/Addtoy";
 import ErrorPage from "../shared/components/ErrorPage";
+import PrivateRoutes from "./PrivateRoutes";
+import ToyDetails from "../shared/components/ToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -44,18 +46,7 @@ const router = createBrowserRouter([
         path: "/add",
         element: <Addtoy></Addtoy>,
       },
-      // {
-      //   path: "/chef/:id",
-      //   element: (
-      //     <PrivateRoutes>
-      //       <Recipes></Recipes>
-      //     </PrivateRoutes>
-      //   ),
-      //   loader: ({ params }) =>
-      //     fetch(
-      //       `https://chef-recipe-server-abdulahaddf.vercel.app/data/${params.id}`
-      //     ),
-      // },
+     
       // {
       //   path: "*",
       //   element: <ErrorPage></ErrorPage>,
