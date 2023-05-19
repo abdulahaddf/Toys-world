@@ -17,13 +17,7 @@ const AllToys = () => {
             setToys(result)
           });
       }, []);
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/toy/:id`)
-    //       .then((res) => res.json())
-    //       .then((result) => {
-    //         setToys(result)
-    //       });
-    //   }, []);
+   
 
       
     return (
