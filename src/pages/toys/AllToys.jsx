@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Link } from 'react-router-dom';
+import {FaEye } from "react-icons/fa";
 
 
 
@@ -49,9 +50,9 @@ const AllToys = () => {
               <td>{toy.name}</td>
               <td>{toy.sellerName}</td>
               <td>{toy.subCategory}</td>
-              <td>{toy.price}</td>
+              <td>${toy.price}</td>
               <td>{toy.quantity}</td>
-             <td><Link to={`/all/${toy._id}`} className='btn btn-outline btn-sm'>View Details</Link></td>
+             <td><Link to={`/all/${toy._id}`} className='btn btn-outline btn-sm'>View Details<FaEye className='text-lg ml-2'></FaEye></Link></td>
             </tr>
 
                 </> )

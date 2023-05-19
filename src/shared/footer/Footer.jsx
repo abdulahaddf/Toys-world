@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-slate-100 flex justify-evenly text-base-content rounded">
+    <footer className="footer footer-center p-10 bg-slate-100 md:flex justify-evenly text-base-content rounded">
       <div><img className="h-36" src="https://i.ibb.co/9nYfHVF/brand.png" alt="" /></div>
      <div>
      <div className="grid grid-flow-col gap-4">

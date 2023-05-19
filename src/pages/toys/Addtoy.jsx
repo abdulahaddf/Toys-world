@@ -60,7 +60,7 @@ const Addtoy = () => {
           <select
             className="select select-bordered h-10 w-96 "
             {...register("subCategory")}
-            defaultValue="pick"
+            defaultValue="marvel"
           >
             <option value="pick" disabled selected>
               Pick a Sub-Category

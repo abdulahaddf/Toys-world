@@ -1,6 +1,7 @@
 
 import { useLoaderData } from "react-router-dom";
-import Marquee from "react-fast-marquee";
+
+import {FaStar } from "react-icons/fa";
 
 const ToyDetails = ({ params }) => {
  
@@ -26,23 +27,21 @@ const ToyDetails = ({ params }) => {
             alt="Action Toy"
           />
         </figure>
-        <div className=" rounded-xl text-center border p-4 text-xl">
+        <div className=" rounded-xl text-center p-4 text-xl">
           <h2><span className="font-bold mr-2">Toy Name: </span> {name}</h2>
           <p> <span className="font-bold mr-2">Sub Category:</span> {subCategory}</p>
           <p> <span className="font-bold mr-2">Price: </span>{price}</p>
           <p> <span className="font-bold mr-2">Description:</span>{description}</p>
-          <p> <span className="font-bold mr-2">Rating:</span>{rating}</p>
+          <p> <span className="font-bold mr-2">Rating:</span>{rating}<FaStar className="inline text-center mb-2"></FaStar></p>
           <p> <span className="font-bold mr-2">Available:</span>{quantity}</p>
           <p> <span className="font-bold mr-2">Seller:</span>{sellerName}</p>
           <p> <span className="font-bold mr-2">Seller mail:</span>{sellerEmail}</p>
-          <div className="card-actions justify-center">
-            <button className="btn btn-primary">Order now!</button>
+          <div className="card-actions justify-center my-5">
+            <button className="btn btn-slate">Order now !</button>
           </div>
         </div>
       </div>
-      <Marquee>
-  I can be a React component, multiple React components, or just some text.
-</Marquee>
+      
     </div>
   );
 };
