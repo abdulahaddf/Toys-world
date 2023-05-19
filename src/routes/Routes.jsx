@@ -40,13 +40,26 @@ const router = createBrowserRouter([
       },
       {
         path: "/my",
-        element: <MyTOys></MyTOys>,
+        element:(<PrivateRoutes>
+         <MyTOys></MyTOys>
+       </PrivateRoutes>),
+        
       },
       {
         path: "/add",
-        element: <Addtoy></Addtoy>,
+        element:(<PrivateRoutes>
+           <Addtoy></Addtoy>
+        </PrivateRoutes>),
       },
-     
+      {
+        path: "/all/:id",
+        element: (
+          <PrivateRoutes>
+            <ToyDetails></ToyDetails>
+          </PrivateRoutes>
+        )
+       
+      },
       // {
       //   path: "*",
       //   element: <ErrorPage></ErrorPage>,

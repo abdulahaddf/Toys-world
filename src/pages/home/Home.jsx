@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-// import React,{useEffect} from "react";
-// importing aos
+
 import AOS from "aos";
 import "aos/dist/aos.css";
+import PhotoGallery from "../../shared/components/PhotoGallery";
 
 const Home = () => {
   useEffect(() => {
@@ -10,6 +10,7 @@ const Home = () => {
   }, []);
   return (
     <div>
+     
       <div
         className="hero min-h-screen"
         style={{
@@ -33,7 +34,7 @@ const Home = () => {
       </div>
 
       
-
+        <PhotoGallery></PhotoGallery>
       
       
     </div>
