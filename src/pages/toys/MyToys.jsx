@@ -11,6 +11,10 @@ const MyTOys = () => {
     const {user} = useContext(AuthContext)
     const [toys, setToy] = useState([]);
     const [update, setUpdate] = useState(false);
+    const [id, setId] = useState("");
+    const handleId = (id) =>{
+      setId(id);
+    }
     useEffect(()=>{
         fetch(`http://localhost:5000/mytoys?sellerEmail=${user.email}`)
         .then(response => response.json())
@@ -109,10 +113,10 @@ const MyTOys = () => {
               <FaTrashAlt onClick={() => handleDelete(toy._id)} className='text-xl mx-auto my-5'></FaTrashAlt>
               </td>
              <td>
-             <label htmlFor="my-modal-5"><FaEdit className='text-xl mx-auto'></FaEdit>
+             <label htmlFor="my-modal-5"><FaEdit onClick={()=> handleId(toy._id)} className='text-xl mx-auto'></FaEdit>
               </label>
               
-             <UpdateToy toy={toy} key={toy._id} handleToyUpdate={handleToyUpdate}></UpdateToy>
+             <UpdateToy id={id} key={toy._id} handleToyUpdate={handleToyUpdate}></UpdateToy>
              </td>
               
             </tr>

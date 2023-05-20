@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-const UpdateToy = ({toy ,handleToyUpdate}) => {
-    console.log(toy._id);
+const UpdateToy = ({id,handleToyUpdate}) => {
+  
     const { register, handleSubmit } = useForm();
+    const [toy , setToy ] = useState([])
+    
+    useEffect(()=>{
+        fetch(`http://localhost:5000/toy/${id}`)
+        .then(res => res.json())
+        .then(data => setToy(data))
+    },[id]);
+
+
     
     return (
         <div>
@@ -87,7 +96,7 @@ const UpdateToy = ({toy ,handleToyUpdate}) => {
             {...register("description")}
           />
           <input
-            className="text-input hidden"
+            className="text-input"
             {...register("_id")}
             value={toy?._id}
           />
