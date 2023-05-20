@@ -5,7 +5,8 @@ import "aos/dist/aos.css";
 import PhotoGallery from "../../shared/components/PhotoGallery";
 import ToyCategory from "../../shared/components/ToyCategory";
 import useTitle from "../../hooks/useTitle";
-
+import Review from "../../shared/components/Review";
+import Sponsor from "../../shared/components/Sponsor";
 
 
 const Home = () => {
@@ -23,8 +24,8 @@ const Home = () => {
         }}
       >
         <div className="hero-overlay bg-black bg-opacity-70"></div>
-        <div className="hero-content w-1/2 text-neutral-content">
-          <div data-aos="fade-up" data-aos-duration="3100" className="max-w-md">
+        <div className="hero-content w-1/2 text-neutral-content hover:-translate-y-2 duration-200">
+          <div data-aos="fade-up" data-aos-duration="3100" className="max-w-md ">
             <h1 className="mb-5 text-5xl font-extrabold">
               Welcome to the World of Action Toys
             </h1>
@@ -41,8 +42,8 @@ const Home = () => {
       
         <PhotoGallery></PhotoGallery>
         <ToyCategory></ToyCategory>
-        
-       
+        <Review></Review>
+       <Sponsor></Sponsor>
       
       
     </div>

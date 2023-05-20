@@ -22,7 +22,7 @@ const Nav = () => {
         <div>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-slate-900" : "text-slate-600 link link-hover"
+              isActive ? "text-slate-900 " : "text-slate-600 link link-hover"
             }
             to="/"
           >

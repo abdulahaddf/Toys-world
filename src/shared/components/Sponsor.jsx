@@ -13,16 +13,16 @@ const Sponsor = () => {
         <div className='mb-12'>
             <div className=' '>
                 <div className='md:flex justify-around gap-6 ' data-aos="flip-right">
-                    <img className='w-36 sponsor' src="https://i.ibb.co/g3t2Np1/c1.jpg" alt="" />
-                    <img className='w-36 sponsor' src="https://i.ibb.co/pxX3kbr/c2.png" alt="" />
-                    <img className='w-36 sponsor' src="https://i.ibb.co/1fVbrny/c3.webp" alt="" />
-                    <img className='w-36 sponsor' src="https://i.ibb.co/2tQbYtr/c7.png" alt="" />
+                    <img className='w-64 hover:cursor-pointer hover:-translate-y-2 duration-200' src="https://i.ibb.co/ZHSLj42/holw-removebg-preview.png" alt="" />
+                    <img className='w-64 hover:cursor-pointer hover:-translate-y-2 duration-200  ' src="https://i.ibb.co/pQP34jC/marvel.png" alt="" />
+                    <img className='w-64 hover:cursor-pointer hover:-translate-y-2 duration-200  ' src="https://i.ibb.co/2q5tt2N/dc.jpg" alt="" />
+                    <img className='w-64 hover:cursor-pointer hover:-translate-y-2 duration-200  ' src="https://i.ibb.co/Pjt6fqG/lego.png" alt="" />
                 </div>
                 <div className='md:flex justify-around mt-6' data-aos="zoom-in-down">
-                    <img className='w-36 sponsor' src="https://i.ibb.co/m0DNdB7/c10.jpg" alt="" />
-                    <img className='w-36 sponsor' src="https://i.ibb.co/P6sYCbb/c5.png" alt="" />
-                    <img className='w-36 sponsor' src="https://i.ibb.co/NY96Rww/c6.png" alt="" />
-                    <img className='w-36 sponsor' src="https://i.ibb.co/jVJG6c1/c8.png" alt="" />
+                    <img className='w-64 hover:cursor-pointer hover:-translate-y-2 duration-200  ' src="https://i.ibb.co/rc0WSWG/star.png" alt="" />
+                    <img className='w-64 hover:cursor-pointer hover:-translate-y-2 duration-200  ' src="https://i.ibb.co/Lk7ZyqR/ml.jpg" alt="" />
+                    <img className='w-64 hover:cursor-pointer hover:-translate-y-2 duration-200  ' src="https://i.ibb.co/BKQGkD4/Toys-R-Us-Logo.png" alt="" />
+                    <img className='w-64 hover:cursor-pointer hover:-translate-y-2 duration-200  ' src="https://i.ibb.co/bKXsf4p/pt.jpg" alt="" />
                 </div>
             </div>
         </div>
@@ -31,3 +31,9 @@ const Sponsor = () => {
 };
 
 export default Sponsor;
+
+
+
+
+
+
