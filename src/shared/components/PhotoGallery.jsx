@@ -10,19 +10,18 @@ const PhotoGallery = () => {
   const photos = [
     { src: "https://i.ibb.co/G26rD9M/t1.jpg" },
     { src: "https://i.ibb.co/N2ZMYNH/t2.jpg" },
+    { src: "https://i.ibb.co/mTrxxKq/iron1.jpg" },
     { src: "https://i.ibb.co/0r2CXdf/t3.jpg" },
     { src: "https://i.ibb.co/XbkbzFF/s1.jpg" },
     { src: "https://i.ibb.co/X35w04c/t4.jpg" },
-    { src: "https://i.ibb.co/mTrxxKq/iron1.jpg" },
     { src: "https://i.ibb.co/GF6WhDV/j1.jpg" },
     { src: "https://i.ibb.co/qY3W4Z9/dark.jpg" },
     { src: "https://i.ibb.co/0pb7SM9/thor.jpg" },
     { src: "https://i.ibb.co/2njD88x/thanos.jpg" },
-    { src: "https://i.ibb.co/5RvBw9c/h1.jpg" },
-    { src: "https://i.ibb.co/ySvPkXT/h2.jpg" },
-    { src: "https://i.ibb.co/thHFqKK/ca.jpg" },
-    { src: "https://i.ibb.co/bLHMfDv/cmm.jpg" },
-    { src: "https://i.ibb.co/XZzVh0s/ds2.jpg" },
+   
+   
+    
+    
   ];
 
   return (

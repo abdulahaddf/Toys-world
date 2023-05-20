@@ -1,23 +1,27 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Link } from 'react-router-dom';
-import { FaEdit,FaTrashAlt,FaEye, FaStar } from "react-icons/fa";
+import { FaEdit,FaTrashAlt,FaEye, FaStar, FaArrowUp, FaArrowDown } from "react-icons/fa";
 import Swal from 'sweetalert2';
+import UpdateToy from '../../shared/components/UpdateToy';
+import { toast } from 'react-toastify';
+import useTitle from '../../hooks/useTitle';
 
 const MyTOys = () => {
     const {user} = useContext(AuthContext)
     const [toys, setToy] = useState([]);
+    const [update, setUpdate] = useState(false);
     useEffect(()=>{
         fetch(`http://localhost:5000/mytoys?sellerEmail=${user.email}`)
         .then(response => response.json())
         .then(data => setToy(data))
-    },[]);
+    },[user, update]);
 
     const handleDelete = id => {
 
 
         Swal.fire({
-            title: 'Are you sure?',
+            title: 'Do you want to delete your Toy?',
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
@@ -41,32 +45,35 @@ const MyTOys = () => {
 
               Swal.fire(
                 'Deleted!',
-                'Your file has been deleted.',
+                'Your Toy has been deleted.',
                 'success'
               )
             }
           })
 
-
-        // const proceed = confirm('Are You sure you want to delete');
-        // if (proceed) {
-        //     fetch(`http://localhost:5000/toy/${id}`, {
-        //         method: 'DELETE'
-        //     })
-        //         .then(res => res.json())
-        //         .then(data => {
-        //             console.log(data);
-        //             if (data.deletedCount > 0) {
-        //                 alert('deleted successful');
-        //                 const remaining = toys.filter(toy => toy._id !== id);
-        //                 setToy(remaining);
-        //             }
-        //         })
-        // }
     }
+
+
+    const handleToyUpdate = (data) => {
+      console.log(data);
+      fetch(`http://localhost:5000/updateToy/${data._id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.modifiedCount > 0) {
+            setUpdate(!update)
+            toast('Your ToY Details have been updated')
+          }
+          console.log(result);
+        });
+    };
+    useTitle("my toys");
     return (
         <div>
-            <h1>my toysasssssssssssssssssssss : {toys.length}</h1>
+            <h1 className='text-5xl text-center font-bold my-10'>My Toys</h1>
 
 
             <div className="overflow-x-auto">
@@ -78,12 +85,12 @@ const MyTOys = () => {
               <th className='text-2xl'>Toy Name</th>
              
               <th className='text-2xl'>Sub Category</th>
-              <th className='text-2xl'>Price</th>
+              <th className='text-2xl'>Price<FaArrowUp className="inline mx-2 mb-1   "></FaArrowUp></th>
               <th className='text-2xl'>Ratings</th>
               <th className='text-2xl'>Available quantity</th>
-              <th></th>
-              <th></th>
-              <th></th>
+              
+              <th>delete</th>
+              <th>edit</th>
             </tr>
           </thead>
           <tbody>
@@ -98,9 +105,16 @@ const MyTOys = () => {
               <td>${toy.price}</td>
               <td>{toy.rating}<FaStar className="inline ml-1 mb-1   "></FaStar></td>
               <td>{toy.quantity}</td>
-              <FaTrashAlt onClick={() => handleDelete(toy._id)} className='text-xl my-5'></FaTrashAlt>
-              <FaEdit className='text-xl my-5'></FaEdit>
-             
+              <td>
+              <FaTrashAlt onClick={() => handleDelete(toy._id)} className='text-xl mx-auto my-5'></FaTrashAlt>
+              </td>
+             <td>
+             <label htmlFor="my-modal-5"><FaEdit className='text-xl mx-auto'></FaEdit>
+              </label>
+              
+             <UpdateToy toy={toy} key={toy._id} handleToyUpdate={handleToyUpdate}></UpdateToy>
+             </td>
+              
             </tr>
 
                 </> )

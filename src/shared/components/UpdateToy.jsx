@@ -1,67 +1,54 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import { AuthContext } from "../../provider/AuthProvider";
-import { useContext } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import useTitle from "../../hooks/useTitle";
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
-const Addtoy = () => {
-  const { user } = useContext(AuthContext);
-  const { register, handleSubmit } = useForm();
+const UpdateToy = ({toy ,handleToyUpdate}) => {
+    console.log(toy._id);
+    const { register, handleSubmit } = useForm();
+    
+    return (
+        <div>
+            {/* The button to open modal */}
 
-  const onSubmit = (data) => {
-    fetch("http://localhost:5000/toy", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        if (result.acknowledged) {
-          toast("The toy has been successfully added!");
-        }
-      });
-    console.log(data);
-  };
-  useTitle("add toy");
-  return (
-    <div>
-      <h1 className="text-3xl md:text-5xl font-bold text-center my-10">
-        Add a toy you want to sell
-      </h1>
-      <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
+
+{/* Put this part before </body> tag */}
+<input type="checkbox" id="my-modal-5" className="modal-toggle" />
+
+
+<div className="modal">
+  <div className="modal-box relative w-11/12 max-w-5xl">
+  <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+  <div>
+      
+      <form className="w-full" onSubmit={handleSubmit(handleToyUpdate)}>
+        <h1 className='text-4xl font-semibold'>Update Your Toy Details</h1>
         <div className="grid md:grid-cols-2 space-y-6 self-center w-11/12 items-center mx-auto">
           <input
             placeholder="Enter photo url"
+            defaultValue={toy.photo}
             className="border-2 h-10 w-96 p-4"
             {...register("photo")}
           />
           <input
             placeholder="Enter Toy name"
+            defaultValue={toy.name}
             className="border h-10 w-96 p-4"
             {...register("name")}
             required
           />
           <input
             placeholder="Enter Seller name"
+            defaultValue={toy.sellerName}
             className="border h-10 w-96 p-4"
             {...register("sellerName")}
             required
           />
-          <input
-            placeholder="Enter Seller email"
-            value={user?.email}
-            className="border h-10 w-96 p-4"
-            {...register("sellerEmail")}
-            required
-          />
+          
 
           <select
             className="select select-bordered h-10 w-96 "
             {...register("subCategory")}
-            defaultValue="marvel"
+            defaultValue={toy.subCategory}
           >
             <option value="pick" disabled selected>
               Pick a Sub-Category
@@ -74,18 +61,21 @@ const Addtoy = () => {
 
           <input
             placeholder="Enter Toy Price"
+            defaultValue={toy.price}
             className="border h-10 w-96 p-4"
             {...register("price")}
             required
           />
           <input
             placeholder="Enter Toy Rating"
+            defaultValue={toy.rating}
             className="border h-10 w-96 p-4"
             {...register("rating")}
           />
           <input
             placeholder="Enter Toy Quantity"
             type="number"
+            defaultValue={toy.quantity}
             className="border h-10 w-96 p-4"
             {...register("quantity")}
             required
@@ -93,7 +83,13 @@ const Addtoy = () => {
           <input
             placeholder="Toy Description"
             className="border h-10 w-96 p-4"
+            defaultValue={toy.description}
             {...register("description")}
+          />
+          <input
+            className="text-input hidden"
+            {...register("_id")}
+            value={toy?._id}
           />
         </div>
 
@@ -102,7 +98,20 @@ const Addtoy = () => {
         </div>
       </form>
     </div>
-  );
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+        </div>
+    );
 };
 
-export default Addtoy;
+export default UpdateToy;

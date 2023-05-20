@@ -3,11 +3,16 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import PhotoGallery from "../../shared/components/PhotoGallery";
+import ToyCategory from "../../shared/components/ToyCategory";
+import useTitle from "../../hooks/useTitle";
+
+
 
 const Home = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+  useTitle("home");
   return (
     <div>
      
@@ -35,6 +40,9 @@ const Home = () => {
 
       
         <PhotoGallery></PhotoGallery>
+        <ToyCategory></ToyCategory>
+        
+       
       
       
     </div>

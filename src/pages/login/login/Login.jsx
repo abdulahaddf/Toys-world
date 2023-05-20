@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import { Link, Navigate } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
   const { user, signIn, signInGoogle, signInGit } = useContext(AuthContext);
@@ -63,7 +64,7 @@ const Login = () => {
       setEmailError("");
     }
   };
-
+  useTitle("login");
   return (
     <div className="relative flex flex-col justify-center my-24 overflow-hidden">
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">

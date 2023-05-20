@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import { Link } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 //   console.log(user, createUser);
 const Register = () => {
@@ -72,7 +73,7 @@ const Register = () => {
   };
 
   //    console.log(user);
-
+  useTitle("register");
   return (
     <div>
       <div className="relative flex flex-col justify-center my-24 overflow-hidden">

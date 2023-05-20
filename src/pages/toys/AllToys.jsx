@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Link } from 'react-router-dom';
-import {FaEye } from "react-icons/fa";
+import {FaArrowUp, FaEye } from "react-icons/fa";
+import useTitle from '../../hooks/useTitle';
 
 
 
@@ -20,7 +21,7 @@ const AllToys = () => {
       }, []);
    
 
-      
+      useTitle("all toys");
     return (
         <div>
            <h1 className='text-3xl font-bold text-center my-10'>Total toys : {toys.length}</h1>
@@ -31,7 +32,7 @@ const AllToys = () => {
           {/* head */}
           <thead>
             <tr>
-              <th className='text-2xl'>no.</th>
+              <th ><span className='text-2xl'>No.</span>(Latest<FaArrowUp className="inline ml-1 mb-1   "></FaArrowUp>)</th>
               <th className='text-2xl'>Toy Name</th>
               <th className='text-2xl'>Seller</th>
               <th className='text-2xl'>Sub Category</th>
