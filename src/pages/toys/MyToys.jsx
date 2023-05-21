@@ -87,7 +87,7 @@ const MyTOys = () => {
       })
       .catch((error) => {
         console.error("Error updating toy:", error);
-        toast("Error occurred! Please try again later");
+        toast("Error occurred! Please click on id and try again");
       });
   };
 

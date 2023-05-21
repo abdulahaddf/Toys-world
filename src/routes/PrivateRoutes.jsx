@@ -1,18 +1,15 @@
 import React, { useContext, useEffect } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { toast } from "react-toastify";
+
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const PrivateRoutes = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
   const from = location?.state?.from?.pathname || '/';
 
-  useEffect(() => {
-    if (!user) {
-      toast('You need to log in');
-    }
-  }, [user]);
+  
 
   if (loading) {
     return (
@@ -23,7 +20,12 @@ const PrivateRoutes = ({ children }) => {
       </div>
     );
   }
-
+  useEffect(() => {
+    if (!user) {
+      
+      Swal.fire('You need to log in first');
+    }
+  }, []);
   if (user) {
     return children;
   }

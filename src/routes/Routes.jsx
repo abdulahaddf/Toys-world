@@ -63,10 +63,7 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://toys-server-umber.vercel.app/singletoy/${params.id}`),
       },
-      // {
-      //   path: "*",
-      //   element: <ErrorPage></ErrorPage>,
-      // },
+      
     ],
   },
 ]);

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
 const UpdateToy = ({ id, handleToyUpdate }) => {
-  console.log(id);
+  // console.log(id);
   const { register, handleSubmit, reset } = useForm();
   const [toy, setToy] = useState([]);
 
@@ -98,7 +98,7 @@ const UpdateToy = ({ id, handleToyUpdate }) => {
                   {...register("description")}
                 />
                 <input
-                  className="text-input"
+                  className="border h-10 w-96 p-4"
                   {...register("_id")}
                   defaultValue={toy?._id}
                   value={toy?._id}

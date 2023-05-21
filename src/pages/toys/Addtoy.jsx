@@ -4,7 +4,8 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { useContext } from "react";
 import useTitle from "../../hooks/useTitle";
 
-import "react-toastify/dist/ReactToastify.css";
+
+import Swal from "sweetalert2";
 
 const Addtoy = () => {
   const { user } = useContext(AuthContext);
@@ -20,7 +21,8 @@ const Addtoy = () => {
       .then((result) => {
         console.log(result);
         if (result.acknowledged) {
-          toast("The toy has been successfully added!");
+          
+          Swal.fire('Your Toy has been successfully added')
         }
       });
     console.log(data);
