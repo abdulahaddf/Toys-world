@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useLocation, useNavigation } from "react-router-dom";
 import useTitle from "../../../hooks/useTitle";
 import { toast } from "react-toastify";
 
@@ -11,6 +11,9 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
+  const navigate = useNavigation();
+const location = useLocation()
+const from = location?.state?.from?.pathname || '/'
 
   const handleForm = (e) => {
     e.preventDefault();
@@ -24,7 +27,8 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         toast("Successfully signed in");
-        // navigate(from,{replace: true});
+        navigate(from,{replace:true})
+        
       })
       .catch((error) => {
         const errorCode = error.code;

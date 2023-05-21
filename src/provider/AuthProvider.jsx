@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { toast } from "react-toastify";
+import { useNavigation } from "react-router-dom";
 
 
 export const AuthContext = createContext(null);
@@ -19,7 +20,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  
   const createUser = (email, password) => {
   
     setLoading(true);
@@ -51,6 +52,7 @@ const AuthProvider = ({ children }) => {
   const provider = new GoogleAuthProvider();
 
   const signInGoogle = () => {
+    
     signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
