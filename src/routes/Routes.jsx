@@ -60,7 +60,8 @@ const router = createBrowserRouter([
             <ToyDetails></ToyDetails>
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://toys-server-umber.vercel.app/singletoy/${params.id}`),
       },
       // {
       //   path: "*",

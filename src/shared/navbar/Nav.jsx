@@ -148,22 +148,24 @@ const Nav = () => {
         </NavLink> : ""
          }
         </div>
+        
     </ul>
   </div>
   <div className="navbar-end">
   <div className="md:flex-none">
         {user ? (
           <div className="flex items-center">
+            
+            <div className="relative mr-3 w-10 rounded-full tooltip tooltip-left " data-tip={user?.displayName}>
+              <img className="rounded-full" src={user?.photoURL} />
+              
+            </div>
             <button
               onClick={handleLogOut}
               className="btn btn-outline btn-sm mr-5"
             >
               Log Out
             </button>
-            <div className="relative w-10 rounded-full tooltip tooltip-left " data-tip={user?.displayName}>
-              <img className="rounded-full" src={user?.photoURL} />
-              
-            </div>
           </div>
         ) : (
           <Link to="/login" className="btn btn-outline btn-sm mr-5">
