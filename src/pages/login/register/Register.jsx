@@ -78,7 +78,7 @@ const Register = () => {
     <div>
       <div className="relative flex flex-col justify-center my-24 overflow-hidden">
         <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
-          <h1 className="text-3xl font-semibold text-center text-slate-700 uppercase">
+          <h1 className="text-3xl font-semibold text-center text-blue-700 uppercase">
             Sign Up
           </h1>
           <form onSubmit={handleReg} className="mt-6">
@@ -92,7 +92,7 @@ const Register = () => {
               <input
                 type="text"
                 name="name"
-                className="block w-full px-4 py-2 mt-2 text-slate-700 bg-white border rounded-md focus:border-slate-400 focus:ring-slate-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <div className="mb-2">
@@ -107,7 +107,7 @@ const Register = () => {
                 type="email"
                 name="email"
                 onChange={handleEmail}
-                className="block w-full px-4 py-2 mt-2 text-slate-700 bg-white border rounded-md focus:border-slate-400 focus:ring-slate-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 required
               />
             </div>
@@ -122,7 +122,7 @@ const Register = () => {
                 type="password"
                 name="password"
                 onChange={handlePassword}
-                className="block w-full px-4 py-2 mt-2 text-slate-700 bg-white border rounded-md focus:border-slate-400 focus:ring-slate-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 required
               />
             </div>
@@ -136,10 +136,10 @@ const Register = () => {
               <input
                 type="text"
                 name="url"
-                className="block w-full px-4 py-2 mt-2 text-slate-700 bg-white border rounded-md focus:border-slate-400 focus:ring-slate-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
-            <a href="#" className="text-xs text-slate-600 hover:underline">
+            <a href="#" className="text-xs text-blue-600 hover:underline">
               Forget Password?
             </a>
             <div>
@@ -155,7 +155,7 @@ const Register = () => {
             </div>
             <div className="mt-6">
               <button
-                className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-slate-700 rounded-md hover:bg-slate-600 focus:outline-none focus:bg-slate-600"
+                className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
                 disabled={isDisabled}
               >
                 Register
@@ -180,7 +180,6 @@ const Register = () => {
               </svg>
               <span className="ml-2">Sign up with Google</span>
             </button>
-            
           </div>
 
           <p className="mt-8 text-md font-normal text-center text-gray-700">
@@ -188,7 +187,7 @@ const Register = () => {
             Already have an account?{" "}
             <Link
               to="/login"
-              className="font-medium text-lg text-slate-600 hover:underline"
+              className="font-medium text-lg text-blue-600 hover:underline"
             >
               Sign In
             </Link>

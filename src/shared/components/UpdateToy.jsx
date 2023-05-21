@@ -4,14 +4,14 @@ import { toast } from "react-toastify";
 
 const UpdateToy = ({ id, handleToyUpdate }) => {
   console.log(id);
-  const { register, handleSubmit ,reset } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [toy, setToy] = useState([]);
 
   useEffect(() => {
     fetch(`https://toys-server-umber.vercel.app/singletoy/${id}`)
       .then((res) => res.json())
       .then((data) => setToy(data));
-      reset(toy);
+    reset(toy);
   }, [id]);
 
   return (
@@ -106,7 +106,7 @@ const UpdateToy = ({ id, handleToyUpdate }) => {
               </div>
 
               <div className="w-36 mx-auto my-10">
-                <input className="btn btn-slate " type="submit" />
+                <input className="btn btn-blue " type="submit" />
               </div>
             </form>
           </div>

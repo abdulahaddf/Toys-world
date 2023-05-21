@@ -19,12 +19,12 @@ const AllToys = () => {
   useTitle("all toys");
   return (
     <div>
-      <h1 className="text-3xl font-bold text-center my-10">
+      <h1 className="text-3xl font-bold text-blue-700 text-center my-10">
         Total toys : {toys.length}
       </h1>
 
       <div className="overflow-x-auto">
-        <table className="table w-full text-center">
+        <table className="table w-full text-center text-blue-500">
           {/* head */}
           <thead>
             <tr>

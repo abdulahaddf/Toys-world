@@ -26,7 +26,7 @@ const PhotoGallery = () => {
 
   return (
     <>
-  <h1 className="text-3xl md:text-5xl font-bold text-center my-10">
+  <h1 className="text-3xl md:text-5xl font-bold text-center text-blue-700 my-10">
     Choose your Favorite Action Toy
   </h1>
   <div className="hidden sm:block"> {/* Show the marquee on large screen */}

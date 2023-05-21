@@ -2,14 +2,14 @@ import React from "react";
 import useTitle from "../../hooks/useTitle";
 
 const Blog = () => {
-    useTitle("blog");
+  useTitle("blog");
   return (
     <div>
-      <h1 className="text-5xl font-bold text-center my-10">
+      <h1 className="text-5xl font-bold text-blue-700 text-center my-10">
         Welcome to my Blog
       </h1>
       <div className="grid md:grid-cols-2 gap-5 p-10">
-        <div className="card p-5 border shadow-lg border-slate-600">
+        <div className="card p-5 border shadow-lg border-blue-600">
           <h1 className="text-xl font-semibold">
             What is an access token and refresh token? How do they work and
             where should we store them on the client-side?
@@ -50,7 +50,7 @@ const Blog = () => {
             security of your authentication system.
           </p>
         </div>
-        <div className="card  p-5 border shadow-lg border-slate-600">
+        <div className="card  p-5 border shadow-lg border-blue-600">
           <h1 className="text-xl font-semibold">
             Compare SQL and NoSQL databases?
           </h1>
@@ -88,7 +88,7 @@ const Blog = () => {
             performance needs.
           </p>
         </div>
-        <div className="card  p-5 border shadow-lg border-slate-600">
+        <div className="card  p-5 border shadow-lg border-blue-600">
           <h1 className="text-xl font-semibold">
             The difference between nodejs and express js
           </h1>
@@ -121,7 +121,7 @@ const Blog = () => {
             expertise to build everything from scratch.
           </p>
         </div>
-        <div className="card  p-5 border shadow-lg border-slate-600">
+        <div className="card  p-5 border shadow-lg border-blue-600">
           <h1 className="text-xl font-semibold">
             What is express js? What is Nest JS
           </h1>

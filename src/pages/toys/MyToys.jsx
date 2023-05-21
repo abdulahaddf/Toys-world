@@ -108,20 +108,20 @@ const handleSearch = () => {
   useTitle("my toys");
   return (
     <div>
-      <h1 className="text-5xl text-center font-bold my-10">My Toys</h1>
+      <h1 className="text-5xl text-center font-bold my-10 text-blue-700">My Toys</h1>
 
       
-      <div className="search-box p-2 text-center ">
+      <div className="search-box p-2 text-center text-blue-700 ">
           <input
             onChange={(e) => setSearchText(e.target.value)}
             type="text"
             className="p-1 border"
             placeholder="Search by Toy name"
           />{" "}
-          <button className="btn btn-sm" onClick={handleSearch}>Search</button>
+          <button className="btn btn-outline  btn-sm" onClick={handleSearch}>Search</button>
         </div>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto text-blue-500">
         <table className="table w-full text-center">
           {/* head */}
           <thead>

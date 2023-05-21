@@ -6,7 +6,6 @@ import useTitle from "../../hooks/useTitle";
 
 import "react-toastify/dist/ReactToastify.css";
 
-
 const Addtoy = () => {
   const { user } = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
@@ -29,10 +28,10 @@ const Addtoy = () => {
   useTitle("add toy");
   return (
     <div>
-      <h1 className="text-3xl md:text-5xl font-bold text-center my-10">
+      <h1 className="text-3xl md:text-5xl text-blue-700 font-bold text-center my-10">
         Add a toy you want to sell
       </h1>
-      <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
+      <form className="w-full text-blue-500" onSubmit={handleSubmit(onSubmit)}>
         <div className="grid md:grid-cols-2 space-y-6 self-center w-11/12 items-center mx-auto">
           <input
             placeholder="Enter photo url"
@@ -85,7 +84,6 @@ const Addtoy = () => {
           <input
             placeholder="Enter Toy Rating"
             className="border h-10 w-96 p-4"
-            
             {...register("rating")}
           />
           <input
@@ -104,10 +102,9 @@ const Addtoy = () => {
         </div>
 
         <div className="w-36 mx-auto my-10">
-          <input className="btn btn-slate " type="submit" />
+          <input className="btn bg-blue-600 " type="submit" />
         </div>
       </form>
-     
     </div>
   );
 };

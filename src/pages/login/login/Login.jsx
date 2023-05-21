@@ -23,7 +23,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        toast('Successfully signed in');
+        toast("Successfully signed in");
         // navigate(from,{replace: true});
       })
       .catch((error) => {
@@ -68,9 +68,9 @@ const Login = () => {
   };
   useTitle("login");
   return (
-    <div className="relative flex flex-col justify-center my-24 overflow-hidden">
-      <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
-        <h1 className="text-3xl font-semibold text-center text-slate-700 uppercase">
+    <div className=" md:flex justify-center my-10 ">
+      <div className="w-full p-6 h-3/4 bg-white rounded-md shadow-2xl lg:max-w-xl">
+        <h1 className="text-3xl font-semibold text-center text-blue-700 uppercase">
           Sign in
         </h1>
         <form onSubmit={handleForm} className="mt-6">
@@ -86,7 +86,7 @@ const Login = () => {
               type="email"
               name="email"
               onChange={handleEmail}
-              className="block w-full px-4 py-2 mt-2 text-slate-700 bg-white border rounded-md focus:border-slate-400 focus:ring-slate-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               required
             />
           </div>
@@ -101,11 +101,11 @@ const Login = () => {
               type="password"
               name="password"
               onChange={handlePassword}
-              className="block w-full px-4 py-2 mt-2 text-slate-700 bg-white border rounded-md focus:border-slate-400 focus:ring-slate-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               required
             />
           </div>
-          <a href="#" className="text-xs text-slate-600 hover:underline">
+          <a href="#" className="text-xs text-blue-600 hover:underline">
             Forget Password?
           </a>
           <div>
@@ -118,7 +118,7 @@ const Login = () => {
             </div>
           </div>
           <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-slate-700 rounded-md hover:bg-slate-600 focus:outline-none focus:bg-slate-600">
+            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
               Login
             </button>
           </div>
@@ -141,7 +141,6 @@ const Login = () => {
             </svg>
             <span className="ml-2">Sign in with Google</span>
           </button>
-          
         </div>
 
         <p className="mt-8 text-md font-normal text-center text-gray-700">
@@ -149,11 +148,15 @@ const Login = () => {
           Don't have an account?{" "}
           <Link
             to="/register"
-            className="font-medium text-lg text-slate-600 hover:underline"
+            className="font-medium text-lg text-blue-600 hover:underline"
           >
             Sign up
           </Link>
         </p>
+      </div>
+      <div>
+        {" "}
+        <img src="https://i.ibb.co/tCnNgPy/login.jpg" alt="" />
       </div>
     </div>
   );

@@ -17,10 +17,10 @@ const ToyCategory = () => {
   // console.log(toys);
   return (
     <div className="text-center">
-      <h1 className="text-5xl font-bold my-10">
+      <h1 className="text-5xl text-blue-700 font-bold my-10">
         Which Toy Are You looking for?
       </h1>
-      <Tabs defaultIndex={0}>
+      <Tabs className="text-blue-700" defaultIndex={0}>
         <TabList>
           <Tab onClick={() => handleCategory("marvel")}>
             Marvel Universe Toys
