@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { Link } from "react-router-dom";
+
 import {
   FaEdit,
   FaTrashAlt,
-  FaEye,
+
   FaStar,
   FaArrowUp,
-  FaArrowDown,
+ 
 } from "react-icons/fa";
 import Swal from "sweetalert2";
 import UpdateToy from "../../shared/components/UpdateToy";
@@ -20,6 +20,7 @@ const MyTOys = () => {
   const [update, setUpdate] = useState(false);
   const [id, setId] = useState("");
   const [del, setDel] = useState(false);
+  const [searchText, setSearchText] = useState("");
   const handleId = (id) => {
     setId(id);
   };
@@ -89,10 +90,36 @@ const MyTOys = () => {
         toast("Error occurred! Please try again later");
       });
   };
+
+
+//search by name
+const handleSearch = () => {
+  console.log(searchText);
+  fetch(`https://toys-server-umber.vercel.app/getToysByText?name=${searchText}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      setToy(data);
+    });
+};
+
+
+  
   useTitle("my toys");
   return (
     <div>
       <h1 className="text-5xl text-center font-bold my-10">My Toys</h1>
+
+      
+      <div className="search-box p-2 text-center ">
+          <input
+            onChange={(e) => setSearchText(e.target.value)}
+            type="text"
+            className="p-1 border"
+            placeholder="Search by Toy name"
+          />{" "}
+          <button className="btn btn-sm" onClick={handleSearch}>Search</button>
+        </div>
 
       <div className="overflow-x-auto">
         <table className="table w-full text-center">

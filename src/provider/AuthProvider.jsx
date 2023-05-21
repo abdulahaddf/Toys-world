@@ -7,10 +7,11 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
-  GithubAuthProvider,
   updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import { toast } from "react-toastify";
+
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -20,8 +21,17 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
+  
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      toast('User created successfully');
+     
+    })
+    .catch((error) => {
+      console.log(error);
+      toast('Error creating user: ' + error.message);
+    })
   };
 // sign in with email and password
   const signIn = (email, password) => {
@@ -45,6 +55,8 @@ const AuthProvider = ({ children }) => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        toast('Successfully signed in')
+        navigate(from, {replace : true});
 
         console.log(user);
       })
@@ -52,22 +64,10 @@ const AuthProvider = ({ children }) => {
         console.log(err.message);
       });
   };
-//login with github
-  const gitProvider = new GithubAuthProvider();
-  const signInGit = () => {
-    signInWithPopup(auth, gitProvider)
-      .then((result) => {
-        const user = result.user;
-        setUser(user);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
+
   const profileUpdate = (profile) => {
     return updateProfile(auth.currentUser, profile);
   };
-  //observe auth state changes
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -83,7 +83,6 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     signInGoogle,
-    signInGit,
     loading,
     profileUpdate,
   };

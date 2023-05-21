@@ -4,13 +4,14 @@ import { toast } from "react-toastify";
 
 const UpdateToy = ({ id, handleToyUpdate }) => {
   console.log(id);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit ,reset } = useForm();
   const [toy, setToy] = useState([]);
 
   useEffect(() => {
     fetch(`https://toys-server-umber.vercel.app/singletoy/${id}`)
       .then((res) => res.json())
       .then((data) => setToy(data));
+      reset(toy);
   }, [id]);
 
   return (

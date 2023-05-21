@@ -2,8 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useContext } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
+
 import useTitle from "../../hooks/useTitle";
 
 const Addtoy = () => {
@@ -36,16 +36,19 @@ const Addtoy = () => {
           <input
             placeholder="Enter photo url"
             className="border-2 h-10 w-96 p-4"
+            type="text"
             {...register("photo")}
           />
           <input
             placeholder="Enter Toy name"
             className="border h-10 w-96 p-4"
+            type="text"
             {...register("name")}
             required
           />
           <input
             placeholder="Enter Seller name"
+            type="text"
             className="border h-10 w-96 p-4"
             {...register("sellerName")}
             required
@@ -81,6 +84,7 @@ const Addtoy = () => {
           <input
             placeholder="Enter Toy Rating"
             className="border h-10 w-96 p-4"
+            type="number"
             {...register("rating")}
           />
           <input
@@ -93,6 +97,7 @@ const Addtoy = () => {
           <input
             placeholder="Toy Description"
             className="border h-10 w-96 p-4"
+            type="text"
             {...register("description")}
           />
         </div>
