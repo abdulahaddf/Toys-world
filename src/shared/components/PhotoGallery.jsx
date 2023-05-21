@@ -40,7 +40,7 @@ const PhotoGallery = () => {
                 data-aos-duration="3500"
                 className="max-w-sm"
               >
-                <img src={photo.src} alt="" className="w-full" />
+                <img src={photo.src} alt="" className="w-64" />
               </div>
             </div>
           ))}
@@ -58,7 +58,7 @@ const PhotoGallery = () => {
               data-aos-duration="3500"
               className="max-w-sm"
             >
-              <img src={photo.src} alt="" className=" h-32" />
+              <img src={photo.src} alt="" className=" h-32 " />
             </div>
           </div>
         ))}

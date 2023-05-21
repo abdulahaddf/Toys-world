@@ -14,11 +14,11 @@ const ToyCategory = () => {
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [id]);
-  console.log(toys);
+  // console.log(toys);
   return (
     <div className="text-center">
       <h1 className="text-5xl font-bold my-10">
-        Which Toy Are You looking for? {toys.length}
+        Which Toy Are You looking for?
       </h1>
       <Tabs defaultIndex={0}>
         <TabList>

@@ -5,12 +5,12 @@ const Review = () => {
     return (
         <div>
             <div>
-            <div className="w-1/2 mx-auto mb-12" data-aos="zoom-out-left">
+            <div className="w-1/2 mx-auto mb-12" data-aos="zoom-in-down">
                 <h3 className="font-bold text-slate-700 text-5xl text-center">Customer FeedBack</h3>
-                <p className="font-bold text-center text-slate-700">Here you can see out pride cuntomer review us in different time...we are very happy fou them.</p>
+                <p className="font-medium text-center text-slate-700">Here you can see our pride customers review in different time</p>
             </div>
             <Marquee speed={100}>
-                <div className="flex gap-10 text-slate-700" data-aos="flip-up">
+                <div className="flex gap-10 text-slate-700" data-aos="zoom-in-down">
                     <div className="card w-96  mx-2 my-10 bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10 ">
                             <img src="https://i.ibb.co/PrJY8XX/1.jpg" alt="Shoes" className="rounded-full w-24 h-24 border-4 border-slate-700" />

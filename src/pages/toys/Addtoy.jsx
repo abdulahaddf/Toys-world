@@ -2,9 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useContext } from "react";
-
-
 import useTitle from "../../hooks/useTitle";
+
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Addtoy = () => {
   const { user } = useContext(AuthContext);
@@ -84,7 +85,7 @@ const Addtoy = () => {
           <input
             placeholder="Enter Toy Rating"
             className="border h-10 w-96 p-4"
-            type="number"
+            
             {...register("rating")}
           />
           <input
@@ -106,6 +107,7 @@ const Addtoy = () => {
           <input className="btn btn-slate " type="submit" />
         </div>
       </form>
+     
     </div>
   );
 };

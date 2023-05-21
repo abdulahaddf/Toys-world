@@ -13,7 +13,7 @@ const ToyCard = ({toy}) => {
       <div className="card w-96 mx-auto glass my-2">
         <figure>
           <img
-            className="w-full rounded-xl"
+            className="w-36 md:w-48 hover:cursor-pointer hover:-translate-y-2 duration-200 p-3 rounded-xl"
             src={toy?.photo}
             alt="Action Toy"
           />
