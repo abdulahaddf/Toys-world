@@ -11,7 +11,7 @@ import {
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { toast } from "react-toastify";
-import { useNavigation } from "react-router-dom";
+
 
 
 export const AuthContext = createContext(null);
@@ -49,22 +49,12 @@ const AuthProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 //login with google
-  const provider = new GoogleAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
 
   const signInGoogle = () => {
     
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        setUser(user);
-        toast('Successfully signed in')
-        navigate(from, {replace : true});
-
-        console.log(user);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+    setLoading(true)
+    return signInWithPopup(auth, googleProvider)
   };
 
   const profileUpdate = (profile) => {
@@ -86,6 +76,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     signInGoogle,
     loading,
+    setLoading,
     profileUpdate,
   };
 

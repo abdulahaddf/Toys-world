@@ -5,15 +5,17 @@ import useTitle from "../../../hooks/useTitle";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const { user, signIn, signInGoogle, signInGit } = useContext(AuthContext);
+  const { user, signIn, signInGoogle,setLoading } = useContext(AuthContext);
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [email, setEmail] = useState("");
+
   const navigate = useNavigation();
-const location = useLocation()
-const from = location?.state?.from?.pathname || '/'
+  const location = useLocation();
+
+const from = location.state?.from?.pathname || "/";
 
   const handleForm = (e) => {
     e.preventDefault();
@@ -27,7 +29,7 @@ const from = location?.state?.from?.pathname || '/'
         const loggedUser = result.user;
         console.log(loggedUser);
         toast("Successfully signed in");
-        navigate(from,{replace:true})
+        navigate(from,{replace:true});
         
       })
       .catch((error) => {
@@ -44,14 +46,33 @@ const from = location?.state?.from?.pathname || '/'
       });
   };
 
+
+  // Handle google signin
+  const handleGoogleSignIn = () => {
+    signInGoogle()
+      .then(result => {
+        console.log(result.user)
+        toast('successfully signed in')
+       
+        navigate(from, { replace: true })
+      })
+      .catch(err => {
+        setLoading(false)
+        console.log(err.message)
+        
+      })
+  }
+
   const handlePassword = (e) => {
     const passwordInput = e.target.value;
     setPassword(passwordInput);
     if (passwordInput.length < 6) {
       setPasswordError("Password must be at least 6 characters long");
-    } else if (!/.+[A-Z].+/.test(passwordInput)) {
-      setPasswordError("Password must contain capital letter");
-    } else if (!/\d+/.test(passwordInput)) {
+    } else if (!/[a-z]/.test(passwordInput)) {
+      setPasswordError("Password must contain a lowercase letter");
+    } else if (!/[A-Z]/.test(passwordInput)) {
+      setPasswordError("Password must contain a uppercase letter");
+    } else if (!/\d/.test(passwordInput)) {
       setPasswordError("Password must contain at least one number");
     } else {
       setPasswordError("");
@@ -132,7 +153,7 @@ const from = location?.state?.from?.pathname || '/'
         </div>
         <div className="flex mt-4 gap-x-2">
           <button
-            onClick={signInGoogle}
+            onClick={handleGoogleSignIn}
             type="button"
             className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-violet-600"
           >

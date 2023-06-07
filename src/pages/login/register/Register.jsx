@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate, useNavigation } from "react-router-dom";
 import useTitle from "../../../hooks/useTitle";
 
 //   console.log(user, createUser);
@@ -13,6 +13,10 @@ const Register = () => {
 
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
+  const navigate = useNavigation();
+  const location = useLocation();
+
+const from = location.state?.from?.pathname || "/";
 
   const isDisabled = email == "" || password == "";
 
@@ -35,14 +39,29 @@ const Register = () => {
     createUser(email, password).then((result) => {
       const loggedUser = result.user;
       profileUpdate({ displayName: name, photoURL: url });
-      console
-        .log(loggedUser)
-
-        .catch((err) => {
-          console.log(err);
-        });
+      console.log(loggedUser)
+      navigate('/');
+    })
+    .catch((err) => {
+      console.log(err);
     });
   };
+
+  //google
+  const handleGoogleSignIn = () => {
+    signInGoogle()
+      .then(result => {
+        console.log(result.user)
+        toast('successfully signed in')
+       
+        navigate(from, { replace: true })
+      })
+      .catch(err => {
+        setLoading(false)
+        console.log(err.message)
+        
+      })
+  }
 
   const handleEmail = (e) => {
     const emailInput = e.target.value;
@@ -63,9 +82,11 @@ const Register = () => {
     setPassword(passwordInput);
     if (passwordInput.length < 6) {
       setPasswordError("Password must be at least 6 characters long");
-    } else if (!/.+[A-Z].+/.test(passwordInput)) {
-      setPasswordError("Password must contain capital letter");
-    } else if (!/\d+/.test(passwordInput)) {
+    } else if (!/[a-z]/.test(passwordInput)) {
+      setPasswordError("Password must contain a lowercase letter");
+    } else if (!/[A-Z]/.test(passwordInput)) {
+      setPasswordError("Password must contain a uppercase letter");
+    } else if (!/\d/.test(passwordInput)) {
       setPasswordError("Password must contain at least one number");
     } else {
       setPasswordError("");
@@ -167,7 +188,7 @@ const Register = () => {
           </div>
           <div className="flex mt-4 gap-x-2">
             <button
-              onClick={signInGoogle}
+              onClick={handleGoogleSignIn}
               type="button"
               className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-violet-600"
             >
