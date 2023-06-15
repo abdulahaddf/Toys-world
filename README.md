@@ -1,6 +1,8 @@
 # Toys World
-    
-## Features
+# Live Website
+https://toys-world-df.netlify.app/
+
+# Features
 
 - Login System with google and email & password
 - Private route
@@ -10,8 +12,7 @@
 - Blogs 
 
 
-## Live Website
-https://toys-world-df.netlify.app/
+
 
 # Front-end Technologies:
 
