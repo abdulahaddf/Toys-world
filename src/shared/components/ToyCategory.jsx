@@ -16,7 +16,7 @@ const ToyCategory = () => {
   }, [id]);
   // console.log(toys);
   return (
-    <div className="text-center">
+    <section id="explore" className="text-center">
       <h1 className="text-2xl md:text-5xl text-blue-700 font-bold my-10">
         Which Toy Are You looking for?
       </h1>
@@ -53,7 +53,7 @@ const ToyCategory = () => {
           </div>
         </TabPanel>
       </Tabs>
-    </div>
+    </section>
   );
 };
 

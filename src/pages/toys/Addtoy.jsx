@@ -30,7 +30,7 @@ const Addtoy = () => {
   useTitle("add toy");
   return (
     <div>
-      <h1 className="text-3xl md:text-5xl text-blue-700 font-bold text-center my-10">
+      <h1 className="text-3xl md:text-5xl text-blue-700 font-bold text-center my-5">
         Add a toy you want to sell
       </h1>
       <form className="w-full text-blue-500" onSubmit={handleSubmit(onSubmit)}>

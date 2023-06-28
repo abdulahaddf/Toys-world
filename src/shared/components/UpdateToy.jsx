@@ -106,7 +106,7 @@ const UpdateToy = ({ id, handleToyUpdate }) => {
               </div>
 
               <div className="w-36 mx-auto my-10">
-                <input className="btn btn-blue " type="submit" />
+                <input className="btn btn-blue text-white " type="submit" />
               </div>
             </form>
           </div>

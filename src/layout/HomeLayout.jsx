@@ -1,15 +1,17 @@
 import React from "react";
 
 import { Outlet, useLocation } from "react-router-dom";
-import Nav from "../shared/navbar/Nav";
+
 import Footer from "../shared/footer/Footer";
+import Navbar from "../shared/navbar/Navbar";
 
 const HomeLayout = () => {
   const location = useLocation();
   console.log(location);
   return (
     <div>
-      <Nav></Nav>
+
+      <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>
     </div>

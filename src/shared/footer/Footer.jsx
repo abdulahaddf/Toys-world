@@ -3,9 +3,10 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="footer footer-center p-10 bg-[#DDE9FD] md:flex justify-evenly text-base-content rounded">
-      <div className="flex font-extrabold text-5xl">
+      <div className=" font-extrabold text-5xl">
         <img className="h-36" src="https://i.ibb.co/n3W03RF/pp.png" alt="" />
-        <h1>Toys World</h1>
+        <h1 className="text-transparent h-24 bg-clip-text font-extrabold text-3xl md:text-5xl
+              bg-gradient-to-br from-black via-blue-400 to-blue-600">Toys World</h1>
       </div>
       <div>
         <div className="grid grid-flow-col gap-4">

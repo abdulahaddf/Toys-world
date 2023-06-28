@@ -108,7 +108,7 @@ const handleSearch = () => {
   useTitle("my toys");
   return (
     <div>
-      <h1 className="text-5xl text-center font-bold my-10 text-blue-700">My Toys</h1>
+      <h1 className="text-5xl text-center font-bold my-5 text-blue-700">My Toys</h1>
 
       
       <div className="search-box p-2 text-center text-blue-700 ">
