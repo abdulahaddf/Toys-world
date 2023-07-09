@@ -1,15 +1,17 @@
 # Toys World
+I'm currently working on it to update some features
 # Live Website
 https://toys-world-df.netlify.app/
 
 # Features
 
-- Login System with google and email & password
-- Private route
-- Find best toys here
-- Become a seller and sell your toys here
-- find your uploaded toys and update them as per your prefarences
-- Blogs 
+
+- Provide options for users to log in using their Google accounts or with email and password.
+-private routes that can only be accessed by authenticated users.
+-Design a search or browsing functionality for users to find the best toys.
+-Allow users to register as sellers
+-Provide a personalized dashboard for users to view and manage their selected toys.
+-Incorporate a blog section where users can read and engage with articles related to toys, parenting tips, toy reviews, etc.
 
 
 
