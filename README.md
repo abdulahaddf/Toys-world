@@ -1,7 +1,7 @@
 # Toys World
 I'm currently working on it to update some features
 # Live Website
-https://toys-world-df.netlify.app/
+https://toys-world-dft.netlify.app/
 
 # Features
 
