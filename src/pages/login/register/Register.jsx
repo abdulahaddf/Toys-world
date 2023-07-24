@@ -147,7 +147,7 @@ const from = location.state?.from?.pathname || "/";
                 required
               />
             </div>
-            <div className="mb-2">
+            {/* <div className="mb-2">
               <label
                 for="url"
                 className="block text-sm font-semibold text-gray-800"
@@ -159,7 +159,7 @@ const from = location.state?.from?.pathname || "/";
                 name="url"
                 className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
-            </div>
+            </div> */}
             <a href="#" className="text-xs text-blue-600 hover:underline">
               Forget Password?
             </a>

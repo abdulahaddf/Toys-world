@@ -59,13 +59,12 @@ const Home = () => {
                   Explore
                 </a>
                 <a
-                  className="inline-block px-7 py-3 bg-transparent text-blue-600 font-medium text-sm leading-snug uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                  href="#!"
-                  role="button"
+                  className="btn btn-outline text-blue-600 hover:bg-blue-600 font-medium text-sm  "
+                 
+                  href="all"
+               
                 >
-                  Learn more
+                  See more
                 </a>
               </div>
               <div className="mb-12 lg:mb-0">
@@ -80,27 +79,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage: `url("https://i.ibb.co/9hXX6Hq/tracar.jpg")`,
-        }}
-      >
-        <div className="hero-overlay bg-gradient-to-r from-blue-800"></div>
-        <div className="hero-content w-1/2 text-neutral-content hover:-tranblue-y-2 duration-200 object-cover">
-          <div data-aos="fade-up" data-aos-duration="3100" className=" md:-ml-32 w-3/4 ">
-            <h1 className="mb-5 text-5xl font-extrabold">
-              Welcome to the World of Action Toys
-            </h1>
-            <p className="mb-5 text-2xl font-bold">
-              Find any kind of action toys here
-            </p>
-            <button className="btn btn-blue bg-white text-black font-bold">
-              Explore
-            </button>
-          </div>
-        </div>
-      </div> */}
+    
 
       <PhotoGallery></PhotoGallery>
       <ToyCategory></ToyCategory>
