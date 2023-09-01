@@ -93,7 +93,7 @@ const from = location.state?.from?.pathname || "/";
   };
   useTitle("login");
   return (
-    <div className=" md:flex justify-center my-10 ">
+    <div id="login"  className=" md:flex justify-center my-10 class-login">
       <div className="w-full p-6 h-3/4 bg-white rounded-md shadow-2xl lg:max-w-xl">
         <h1 className="text-3xl font-semibold text-center text-blue-700 uppercase">
           Sign in
@@ -110,8 +110,10 @@ const from = location.state?.from?.pathname || "/";
             <input
               type="email"
               name="email"
+              id="email"
+             
               onChange={handleEmail}
-              className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="class-email block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               required
             />
           </div>
@@ -125,8 +127,10 @@ const from = location.state?.from?.pathname || "/";
             <input
               type="password"
               name="password"
+              id="password"
+              
               onChange={handlePassword}
-              className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 class-password"
               required
             />
           </div>
@@ -143,7 +147,8 @@ const from = location.state?.from?.pathname || "/";
             </div>
           </div>
           <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+            <button id="login-btn"
+             className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 class-login-btn">
               Login
             </button>
           </div>
@@ -154,6 +159,7 @@ const from = location.state?.from?.pathname || "/";
         <div className="flex mt-4 gap-x-2">
           <button
             onClick={handleGoogleSignIn}
+            
             type="button"
             className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-violet-600"
           >

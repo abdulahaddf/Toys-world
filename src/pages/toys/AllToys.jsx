@@ -6,8 +6,10 @@ import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const { user } = useContext(AuthContext);
+  
 
   const [toys, setToys] = useState([]);
+  const [searchText, setSearchText] = useState("");
   useEffect(() => {
     fetch(`https://toys-server-umber.vercel.app/toy`)
       .then((res) => res.json())
@@ -16,12 +18,34 @@ const AllToys = () => {
       });
   }, []);
 
+//search by name
+const handleSearch = () => {
+  console.log(searchText);
+  fetch(`https://toys-server-umber.vercel.app/getToysByText?name=${searchText}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      setToys(data);
+    });
+};
+
+
   useTitle("all toys");
   return (
-    <div>
+    <div >
       <h1 className="text-3xl font-bold text-blue-700 text-center my-5">
         Total toys : {toys.length}
       </h1>
+      <div className="search-box p-2 text-center text-blue-700 ">
+          <input
+            onChange={(e) => setSearchText(e.target.value)}
+            type="text"
+            id="search-toy"
+            className="p-1 border class-search-toy"
+            placeholder="Search by Toy name"
+          />{" "}
+          <button className="btn btn-outline  btn-sm" onClick={handleSearch}>Search</button>
+        </div>
 
       <div className="overflow-x-auto">
         <table className="table w-full text-center text-blue-500">

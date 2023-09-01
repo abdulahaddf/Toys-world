@@ -73,8 +73,9 @@ const Navbar = () => {
             </div>
             <div>
               <NavLink
+              id='all-toy'
                 className={({ isActive }) =>
-                  isActive ? "text-blue-900 underline" : "text-blue-600 link link-hover"
+                  isActive ? "text-blue-900 underline class-all" : "text-blue-600 link link-hover class-all"
                 }
                 to="/all"
               >
@@ -85,8 +86,9 @@ const Navbar = () => {
             <div>
               {user ? (
                 <NavLink
+                id='my-toy'
                   className={({ isActive }) =>
-                    isActive ? "text-blue-900 underline pb-5" : "text-blue-600 link link-hover"
+                    isActive ? "text-blue-900 underline pb-5 class-my" : "text-blue-600 link link-hover class-my"
                   }
                   to="/my"
                 >
@@ -129,15 +131,16 @@ const Navbar = () => {
                 >
                   <img className="rounded-full" src={user?.photoURL} />
                 </div>
-                <button
+                <button 
+                id='logout'
                   onClick={handleLogOut}
-                  className="btn btn-outline btn-sm mr-5"
+                  className="logout-btn btn btn-outline btn-sm mr-5"
                 >
                   Log Out
                 </button>
               </div>
             ) : (
-              <Link to="/login" className="btn btn-outline btn-sm mr-5">
+              <Link to="/login" id='login' className="btn btn-outline btn-sm mr-5 login-btn">
                 Login
               </Link>
             )}
