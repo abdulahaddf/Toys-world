@@ -40,11 +40,12 @@ const handleSearch = () => {
           <input
             onChange={(e) => setSearchText(e.target.value)}
             type="text"
+            name="search-text"
             id="search-toy"
             className="p-1 border class-search-toy"
             placeholder="Search by Toy name"
           />{" "}
-          <button className="btn btn-outline  btn-sm" onClick={handleSearch}>Search</button>
+          <button id="search" className="class-search-btn btn btn-outline  btn-sm" onClick={handleSearch}>Search</button>
         </div>
 
       <div className="overflow-x-auto">

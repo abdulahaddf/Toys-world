@@ -33,7 +33,7 @@ const from = location.state?.from?.pathname || "/";
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    // const url = form.url.value;
+    const url = "https://i.ibb.co/sg6hmZ7/user.png" ;
     // console.log(user, name, email, password, url);
 
     createUser(email, password).then((result) => {

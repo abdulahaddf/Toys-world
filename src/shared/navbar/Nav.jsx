@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
-  const handleLogOut = () => {
-    logOut()
-      .then()
-      .catch((error) => console.log(error));
+  const navigate = useNavigate();
+  const handleLogOut = async () => {
+    try {
+      await logOut();
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="  items-center text-center ">
@@ -105,7 +109,11 @@ const Nav = () => {
             </ul>
           </div>
           <div className="flex">
-            <img className="w-16" src="https://i.ibb.co/n3W03RF/pp.png" alt="" />
+            <img
+              className="w-16"
+              src="https://i.ibb.co/n3W03RF/pp.png"
+              alt=""
+            />
             <Link
               to="/"
               className="text-blue-600 hover:text-blue-700  font-extrabold normal-case text-xl md:text-4xl"
@@ -190,12 +198,13 @@ const Nav = () => {
                 >
                   <img className="rounded-full" src={user?.photoURL} />
                 </div>
-                <button
+                <Link
+                  to="/login"
                   onClick={handleLogOut}
                   className="btn btn-outline btn-sm mr-5"
                 >
                   Log Out
-                </button>
+                </Link>
               </div>
             ) : (
               <Link to="/login" className="btn btn-outline btn-sm mr-5">
