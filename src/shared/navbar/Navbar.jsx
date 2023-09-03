@@ -1,7 +1,7 @@
 
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../provider/AuthProvider'
 import Headroom from 'react-headroom'
@@ -11,11 +11,15 @@ import Headroom from 'react-headroom'
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-  const handleLogOut = () => {
-    logOut()
-      .then()
-      .catch((error) => console.log(error));
-  };
+    const navigate = useNavigate();
+    const handleLogOut = async () => {
+      try {
+        await logOut();
+        navigate("/login");
+      } catch (error) {
+        console.log(error);
+      }
+    };
   return (
     <Headroom>
     <Disclosure as="nav" className="bg-gradient-to-r from-[#DDE9FD]">
@@ -131,13 +135,13 @@ const Navbar = () => {
                 >
                   <img className="rounded-full" src={user?.photoURL} />
                 </div>
-                <button 
-                id='logout'
+                <Link
+                  to="/login"
                   onClick={handleLogOut}
-                  className="logout-btn btn btn-outline btn-sm mr-5"
+                  className="btn btn-outline btn-sm mr-5"
                 >
                   Log Out
-                </button>
+                </Link>
               </div>
             ) : (
               <Link to="/login" id='login' className="btn btn-outline btn-sm mr-5 login-btn">
