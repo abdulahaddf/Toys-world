@@ -124,7 +124,6 @@ const Navbar = () => {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 
-
                 {/* Profile dropdown */}
                 <div className="md:flex-none">
             {user ? (
@@ -136,9 +135,10 @@ const Navbar = () => {
                   <img className="rounded-full" src={user?.photoURL} />
                 </div>
                 <Link
+                id='logout'
                   to="/login"
                   onClick={handleLogOut}
-                  className="btn btn-outline btn-sm mr-5"
+                  className="btn btn-outline btn-sm mr-5 logout-btn"
                 >
                   Log Out
                 </Link>
